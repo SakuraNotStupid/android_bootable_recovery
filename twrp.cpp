@@ -441,6 +441,7 @@ int main(int argc, char **argv) {
 	delete adb_bu_fifo;
 	TWFunc::Update_Intent_File(startup.Get_Intent());
 	reboot();
-
+	TWFunc::sakura_Startup();
+	TWFunc::Welcome_Message();
 	return 0;
 }

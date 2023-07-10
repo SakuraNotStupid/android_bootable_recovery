@@ -770,6 +770,8 @@ extern "C" int gui_init(void)
 		PageManager::Render();
 		flip();
 		PageManager::ReleasePackage("splash");
+		TWFunc::sakura_Startup();
+		TWFunc::Welcome_Message();
 	}
 
 #ifdef TW_DELAY_TOUCH_INIT_MS

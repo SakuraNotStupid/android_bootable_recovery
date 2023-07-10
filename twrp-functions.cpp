@@ -70,6 +70,9 @@ extern "C" {
 
 struct selabel_handle *selinux_handle;
 
+// Sakura Modify
+int sakura_welcomed = 0;
+int sakura_Startup_Executed = 0;
 /* Execute a command */
 int TWFunc::Exec_Cmd(const string& cmd, string &result, bool combine_stderr) {
 	FILE* exec;
@@ -1553,6 +1556,28 @@ bool TWFunc::Check_Xml_Format(const std::string filename) {
 			return false; // ABX format - requires conversion
 	}
 	return true; // good format, possible to parse
+}
+
+void TWFunc::Welcome_Message(void)
+{
+ if (sakura_welcomed > 0)
+    return;
+    gui_print("--------------------------\n");
+    gui_print_color("blue", "Welcome to SakuraKyuo Recovery!\n");
+    gui_print("[TWRP]  : %s\n", TW_MAIN_VERSION_STR);
+    gui_print("[Device]: MI 9 SE\n");
+    gui_print_color("blue", "SakuraKyuo Developement:\n");
+    gui_print("[GitHub] : https://github.com/SakuraNotStupid/\n");
+    gui_print("[Support]: https://t.me/SakuraRomRelease/\n");
+    gui_print("--------------------------\n");
+    sakura_welcomed++;
+}
+
+void TWFunc::sakura_Startup(void)
+{
+if (sakura_Startup_Executed > 0)
+     return;
+  TWFunc::Welcome_Message();
 }
 
 #endif // ndef BUILD_TWRPTAR_MAIN
