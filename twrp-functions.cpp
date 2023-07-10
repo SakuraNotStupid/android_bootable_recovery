@@ -1563,10 +1563,10 @@ void TWFunc::Welcome_Message(void)
  if (sakura_welcomed > 0)
     return;
     gui_print("--------------------------\n");
-    gui_print_color("blue", "Welcome to SakuraKyuo Recovery!\n");
+    gui_print("Welcome to SakuraKyuo Recovery!\n");
     gui_print("[TWRP]  : %s\n", TW_MAIN_VERSION_STR);
-    gui_print("[Device]: MI 9 SE\n");
-    gui_print_color("blue", "SakuraKyuo Developement:\n");
+    gui_print("[Device]: MI 9 SE\n\n");
+    gui_print("SakuraKyuo Developement:\n");
     gui_print("[GitHub] : https://github.com/SakuraNotStupid/\n");
     gui_print("[Support]: https://t.me/SakuraRomRelease/\n");
     gui_print("--------------------------\n");
