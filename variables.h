@@ -17,8 +17,8 @@
 #ifndef _VARIABLES_HEADER_
 #define _VARIABLES_HEADER_
 
-#define TW_MAIN_VERSION_STR       "3.7.0_11"
-#define TW_VERSION_STR       "Sakura Modify TWRP For MI 9 SE"
+#define TW_MAIN_VERSION_STR         "3.7.0_11"
+#define TW_VERSION_STR              "Sakura Modify TWRP For MI 9 SE"
 #define TW_SETTINGS_FILE            ".twrps"
 #define TW_RECOVERY_NAME            "TWRP"
 #define TW_DEFAULT_RECOVERY_FOLDER  "/" TW_RECOVERY_NAME
