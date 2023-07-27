@@ -85,8 +85,18 @@ static void Decrypt_Page(bool SkipDecryption, bool datamedia) {
 			PartitionManager.Update_System_Details();
 		} else if (DataManager::GetIntValue(TW_CRYPTO_PWTYPE) != 0) {
 			LOGINFO("Is encrypted, do decrypt page first\n");
-			if (DataManager::GetIntValue(TW_IS_FBE))
+			if (DataManager::GetIntValue(TW_IS_FBE)) {
 				DataManager::SetValue("tw_crypto_user_id", "0");
+				if (!TWFunc::Path_Exists("/data/misc/keystore/user_0")) {
+					gui_print("--------------------------\n");
+					gui_print_color("warning", "*** WARNING ***\n");
+					gui_print_color("warning", "Unfortunately, the /data partition is only partially decrypted because the ROM doesn't expose the keys needed to decrypt Internal Storage in /data/media/0.\n");
+					gui_print_color("warning", "Therefore, it's pointless to ask you for PIN, Password or Pattern.\n");
+					gui_print("--------------------------\n");
+					PartitionManager.Update_System_Details();
+					return;
+				}
+			}
 			if (gui_startPage("decrypt", 1, 1) != 0) {
 				LOGERR("Failed to start decrypt GUI page.\n");
 			}
