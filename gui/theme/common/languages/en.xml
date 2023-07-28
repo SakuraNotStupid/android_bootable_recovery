@@ -782,5 +782,12 @@
 		<string name="restore_with_pattern1">Pattern is enabled</string>
 		<string name="restore_with_pattern2">Pattern should be disabled before restore</string>
 		<string name="reboot_after_restore">It is recommended to reboot Android once after first boot.</string>
+		
+		<!-- The strings of magisk -->
+		<string name="install_magisk">Install Magisk v25.2</string>
+		<string name="addon_magisk_ask">Do you want to install Magisk v25.2?</string>
+		<string name="addon_magisk_tip">It can root your device</string>
+		<string name="addon_magisk_doing">Installing Magisk...</string>
+		<string name="addon_magisk_finished">Install Magisk Complete</string>
 	</resources>
 </language>

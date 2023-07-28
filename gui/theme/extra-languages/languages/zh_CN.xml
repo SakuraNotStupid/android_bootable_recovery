@@ -787,5 +787,12 @@
 		<string name="restore_with_pattern1">ROM 中的 图案密码 已启用</string>
 		<string name="restore_with_pattern2">恢复前应该在 ROM 中禁用 图案密码</string>
 		<string name="reboot_after_restore">建议在 Android 首次启动后再重启一次。</string>
+		
+		<!-- The strings of magisk -->
+		<string name="install_magisk">安装Magisk V25.2</string>
+		<string name="addon_magisk_ask">你是否要安装Magisk v25.2?</string>
+		<string name="addon_magisk_tip">这将会获取Root权限</string>
+		<string name="addon_magisk_doing">安装Magisk中...</string>
+		<string name="addon_magisk_finished">安装Magisk完成</string>
 	</resources>
 </language>

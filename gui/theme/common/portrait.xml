@@ -3821,6 +3821,19 @@
 					<condition var1="tw_has_data_media" var2="1"/>
 					<action function="page">fixcontexts</action>
 				</listitem>
+				<listitem name="{@install_magisk=Install Magisk v25.2}">
+					<actions>
+						<action function="set">tw_back=advanced</action>
+						<action function="set">tw_addon_filepath=/addon/Magisk-v25.2.zip</action>
+						<action function="set">tw_action=flash_addon</action>
+						<action function="set">tw_text1={@addon_magisk_ask=Do you want to install Magisk v25.2?}</action>
+						<action function="set">tw_text3={@addon_magisk_tip=It can root your device}</action>
+						<action function="set">tw_action_text1={@addon_magisk_doing=Installing Magisk...}</action>
+						<action function="set">tw_complete_text1={@addon_magisk_finished=Install Magisk Complete}</action>
+						<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
+						<action function="page">confirm_action</action>
+					</actions>
+				</listitem>
 				<listitem name="{@dumlock_btn=HTC Dumlock}">
 					<condition var1="tw_show_dumlock" var2="1"/>
 					<action function="page">htcdumlock</action>
