@@ -235,6 +235,7 @@ GUIAction::GUIAction(xml_node<>* node)
 		ADD_ACTION(flashimage);
 		ADD_ACTION(twcmd);
 		ADD_ACTION(setbootslot);
+		ADD_ACTION(flash_addon);
 		ADD_ACTION(repackimage);
 		ADD_ACTION(reflashtwrp);
 		ADD_ACTION(fixabrecoverybootloop);
@@ -1952,6 +1953,25 @@ int GUIAction::setbootslot(std::string arg)
 		simulate_progress_bar();
 	}
 	operation_end(0);
+	return 0;
+}
+
+int GUIAction::flash_addon(std::string arg __unused)
+{
+	int ret_val = 0, wipe_cache = 0;
+	std::string path = DataManager::GetStrValue("tw_addon_filepath");
+	TWFunc::SetPerformanceMode(true);
+	ret_val = flash_zip(path, &wipe_cache);
+	TWFunc::SetPerformanceMode(false);
+	if (ret_val != 0) {
+		gui_msg(Msg(msg::kError, "zip_err=Error installing zip file '{1}'")(path));
+		ret_val = 1;
+	}
+	reinject_after_flash();
+	PartitionManager.Update_System_Details();
+	operation_end(ret_val);
+	// This needs to be after the operation_end call so we change pages before we change variables that we display on the screen
+	DataManager::SetValue(TW_ZIP_QUEUE_COUNT, zip_queue_index);
 	return 0;
 }
 

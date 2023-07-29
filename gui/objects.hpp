@@ -368,6 +368,7 @@ protected:
 	int togglebacklight(std::string arg);
 	int twcmd(std::string arg);
 	int setbootslot(std::string arg);
+	int flash_addon(std::string arg);
 	int repackimage(std::string arg);
 	int reflashtwrp(std::string arg);
 	int fixabrecoverybootloop(std::string arg);
