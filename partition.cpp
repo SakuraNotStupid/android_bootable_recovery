@@ -2261,6 +2261,13 @@ bool TWPartition::Wipe_EXTFS(string File_System) {
 
 	gui_msg(Msg("formatting_using=Formatting {1} using {2}...")(Display_Name)("mke2fs"));
 
+	// Execute to unmount the Data partition
+	if (Display_Name == "Data") {
+		if (TWFunc::Path_Exists("/sdcard/TWRP")) {
+			TWFunc::Exec_Cmd("umount /sdcard");
+ 		}
+	}
+
 	// Execute mke2fs to create empty ext4 filesystem
 	Command = "mke2fs -t " + File_System + " -b 4096 " + Actual_Block_Device + " " + size_str;
 	LOGINFO("mke2fs command: %s\n", Command.c_str());
